@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Поиск" Margin="5"/>
+            <TextBox MinWidth="100" MaxWidth="300" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+            
+        </StackPanel>
+        <ListView Grid.Row="1" ItemsSource="{Binding Results}" SelectedItem="{Binding SelectedPhone}" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Номер телефона" DisplayMemberBinding="{Binding Number}"/>
+                    <GridViewColumn Header="Владелец" DisplayMemberBinding="{Binding Owner}"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Создать" Click="CreatePhone"/>
+                    <MenuItem Header="Изменить" Click="EditPhone"/>
+                    <MenuItem Header="Удалить" Click="RemovePhone"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="WpfApp5.WinEditPhone"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp5"
+        mc:Ignorable="d"
+        Title="WinEditPhone" Height="200" Width="300">
+    <StackPanel Margin="10">
+        <TextBlock Text="Номер"/>
+        <TextBox Text="{Binding Number}"/>
+        <TextBlock Text="Владелец"/>
+        <TextBox Text="{Binding Owner}"/>
+        <Button Content="Сохранить" Click="SavePhone" Margin="0 10 0 0"/>
+    </StackPanel>
+</Window>
