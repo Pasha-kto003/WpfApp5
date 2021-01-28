@@ -28,6 +28,7 @@ namespace WpfApp5
 
         private void SavePhone(object sender, RoutedEventArgs e)
         {
+            phone.SaveJson();
             Close();
         }
     }

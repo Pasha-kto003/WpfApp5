@@ -5,10 +5,10 @@ namespace WpfApp5
 {
     public class Phone : INotifyPropertyChanged
     {
-        private string number;
-        private string owner;
-
-        public string Number { get => number; set { number = value; Signal(); } }
+        private string number = "Введите номер";
+        private string owner = "Владелец";
+        public long ID { get; set; }
+        public string Number { get => number; set { number = value; Signal();  } }
         public string Owner { get => owner; set { owner = value; Signal(); } }
 
         public event PropertyChangedEventHandler PropertyChanged;
